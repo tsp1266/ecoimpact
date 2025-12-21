@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>EcoImpact Login</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="js/firebase.js"></script>
+    <script type="module" src="js/auth.js"></script>
+  </head>
+
+  <body
+    class="h-screen w-screen bg-gradient-to-b from-green-500 via-green-300 to-green-100"
+  >
+    <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+      <div
+        class="hidden md:flex flex-col justify-center items-center bg-green-600 text-white p-10"
+      >
+        <img src="ewaste.jpg" class="rounded-xl shadow-lg mb-6 w-3/4" />
+
+        <h1 class="text-4xl font-bold mb-4">Join the Green Revolution</h1>
+
+        <p class="text-lg text-green-100 text-center w-3/4">
+          Every device you recycle helps reduce toxic waste and protects our
+          planet for future generations.
+        </p>
+      </div>
+
+      <div class="flex justify-center items-center">
+        <div class="bg-gray-200 p-8 rounded shadow w-96">
+          <h2 class="text-3xl font-bold text-center text-green-600 mb-6">
+            EcoImpact
+          </h2>
+
+          <form id="authForm">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              class="w-full p-2 mb-4 border rounded"
+              required
+            />
+
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              class="w-full p-2 mb-4 border rounded"
+              required
+            />
+
+            <button
+              type="submit"
+              class="w-full bg-green-600 text-white py-2 rounded mb-3"
+            >
+              Login
+            </button>
+
+            <button
+              type="button"
+              id="signupBtn"
+              class="w-full bg-green-400 text-white py-2 rounded"
+            >
+              Sign Up
+            </button>
+          </form>
+
+          <p id="message" class="text-center mt-4 text-sm"></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
