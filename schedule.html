@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule E-Waste Drop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="module" src="./schedule.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen p-6 flex flex-col items-center">
+    <h1 class="text-4xl font-bold text-green-700 mb-8">
+      Schedule Your E-Waste Drop
+    </h1>
+
+    <form
+      id="scheduleForm"
+      class="bg-white p-8 rounded-xl shadow-md w-full max-w-3xl space-y-6"
+    >
+      <!--  Maps Input -->
+      <div>
+        <label class="font-semibold mb-2 block">Enter Your City:</label>
+        <input
+          id="cityInput"
+          type="text"
+          placeholder="Enter city..."
+          class="w-full p-2 border rounded"
+          required
+        />
+        <button
+          type="button"
+          id="searchBtn"
+          class="mt-2 bg-green-500 text-white px-4 py-2 rounded"
+        >
+          Find Nearest Centre
+        </button>
+      </div>
+
+      <!-- Hidden location field remains for form submission -->
+      <input type="hidden" id="location" name="location" />
+
+      <!-- Display search results -->
+      <div id="centerResults" class="mt-4"></div>
+
+      <div>
+        <label class="font-semibold mb-2 block"> Select Date and Time:</label>
+
+        <input
+          type="datetime-local"
+          name=""
+          id="dateTime"
+          class="w-full p-2 border rounded"
+        />
+      </div>
+      <!-- Devices Selection -->
+      <div>
+        <p class="font-semibold mb-2">Select Devices (Points):</p>
+        <div class="flex flex-wrap gap-4">
+          <label
+            ><input type="checkbox" name="device" value="Phone" /> Phone
+            (10)</label
+          >
+          <label
+            ><input type="checkbox" name="device" value="TV" /> TV (20)</label
+          >
+          <label
+            ><input type="checkbox" name="device" value="Laptop" /> Laptop
+            (15)</label
+          >
+          <label
+            ><input type="checkbox" name="device" value="Tablet" /> Tablet
+            (10)</label
+          >
+          <label
+            ><input type="checkbox" name="device" value="Watch" /> Watch
+            (5)</label
+          >
+          <label
+            ><input type="checkbox" name="device" value="Charger" /> Charger (2)
+          </label>
+        </div>
+      </div>
+
+      <!-- Brands Selection -->
+      <div>
+        <p class="font-semibold mb-2">Select Brands:</p>
+        <div class="flex flex-wrap gap-4">
+          <label
+            ><input type="checkbox" name="brand" value="Apple" /> Apple</label
+          >
+          <label
+            ><input type="checkbox" name="brand" value="Samsung" />
+            Samsung</label
+          >
+          <label
+            ><input type="checkbox" name="brand" value="Xiaomi" /> Xiaomi</label
+          >
+          <label
+            ><input type="checkbox" name="brand" value="Vivo" /> Vivo</label
+          >
+          <label
+            ><input type="checkbox" name="brand" value="Oppo" /> Oppo</label
+          >
+          <label
+            ><input type="checkbox" name="brand" value="Dell" /> Dell</label
+          >
+          <label><input type="checkbox" name="brand" value="HP" /> HP</label>
+          <label
+            ><input type="checkbox" name="brand" value="lenevo" /> Lenovo</label
+          >
+        </div>
+      </div>
+
+      <!-- Working or Non-working -->
+      <div>
+        <p class="font-semibold mb-2">Condition:</p>
+        <label
+          ><input type="radio" name="condition" value="Working" required />
+          Working</label
+        >
+        <label class="ml-4"
+          ><input type="radio" name="condition" value="Non-Working" required />
+          Non-Working</label
+        >
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700"
+      >
+        Schedule Visit
+      </button>
+
+      <p id="message" class="text-center text-sm mt-4 text-red-500"></p>
+    </form>
+  </body>
+</html>
