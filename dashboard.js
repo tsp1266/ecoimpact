@@ -8,9 +8,7 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-/* =========================
-   USER NAME (UNCHANGED)
-========================= */
+/*  USER NAME */
 auth.onAuthStateChanged(async (user) => {
   if (!user) {
     window.location.href = "../index.html";
@@ -31,9 +29,7 @@ auth.onAuthStateChanged(async (user) => {
   }
 });
 
-/* =========================
-   PAST VISITS (UNCHANGED)
-========================= */
+/* PAST VISITS */
 async function loadPastVisits(user) {
   const visitsList = document.querySelector("#pastVisitsList");
 
@@ -77,9 +73,7 @@ auth.onAuthStateChanged(async (user) => {
   }
 });
 
-/* ==================================================
-   ✅ NEW: FETCH ECO POINTS (REQUIRED)
-================================================== */
+/* ECO POINTS*/
 auth.onAuthStateChanged(async (user) => {
   if (!user) return;
 
@@ -90,7 +84,7 @@ auth.onAuthStateChanged(async (user) => {
     const pointsRef = doc(db, "userPoints", user.uid);
     const snap = await getDoc(pointsRef);
 
-    // ✅ DEFAULT POINTS = 0
+  
     let points = 0;
 
     if (snap.exists()) {
@@ -104,9 +98,7 @@ auth.onAuthStateChanged(async (user) => {
   }
 });
 
-/* ==================================================
-   ✅ NEW: FETCH SCHEDULED VISITS (REQUIRED)
-================================================== */
+/*SCHEDULED VISITS*/
 auth.onAuthStateChanged(async (user) => {
   if (!user) return;
 
@@ -149,3 +141,4 @@ auth.onAuthStateChanged(async (user) => {
     list.innerHTML = "<p class='text-red-500'>Unable to load visits.</p>";
   }
 });
+
