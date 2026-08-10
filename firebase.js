@@ -4,7 +4,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/10.7.1/firebase
 
 // 🔑 Paste values from Firebase Console
 const firebaseConfig = {
-  apiKey: "AIzaSyBlcAS94ghdFSWpEKqtuNQqmSUO2Is2n8Y",
+  apiKey: ",
   authDomain: "ecoimpact-81f2d.firebaseapp.com",
   projectId: "ecoimpact-81f2d",
   appId: "1:339517294020:web:a2c4d226710cf78c651091",
